@@ -13,15 +13,17 @@ public class Library {
 	 * @param name
 	 *            The name of the member
 	 * @return registered member
+	 * @throws AlreadyMemberException
+	 *             in case member with same name already exists
 	 */
 	public Member registerMember(String name) {
-		
+
 		Member newMember = new Member(name);
-		
+
 		if (members.contains(newMember)) {
 			throw new AlreadyMemberException();
 		}
-		
+
 		members.add(newMember);
 		return newMember;
 	}
