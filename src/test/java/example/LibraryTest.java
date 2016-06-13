@@ -25,6 +25,14 @@ public class LibraryTest {
 
 	@Test
 	public void shouldNotRegisterAgainWhenAlreadyMember() {
-		fail("not implemented");
+		
+		// given
+		Library library = new Library();
+		library.registerMember("Ted");
+		
+		// when we register with same name
+		library.registerMember("Ted");
+		
+		// then we should see it fail somehow
 	}
 }
