@@ -1,11 +1,11 @@
 package example;
 
-import java.util.ArrayList;
 import java.util.Collection;
+import java.util.HashSet;
 
 public class Library {
 
-	private final Collection<Member> members = new ArrayList<>();
+	private final Collection<Member> members = new HashSet<>();
 
 	/**
 	 * Registers a new member using provided name.
@@ -20,11 +20,10 @@ public class Library {
 
 		Member newMember = new Member(name);
 
-		if (members.contains(newMember)) {
+		if (!members.add(newMember)) {
 			throw new AlreadyMemberException();
 		}
 
-		members.add(newMember);
 		return newMember;
 	}
 
