@@ -4,15 +4,20 @@ import static org.hamcrest.CoreMatchers.equalTo;
 import static org.hamcrest.CoreMatchers.is;
 import static org.junit.Assert.*;
 
+import org.junit.Before;
 import org.junit.Test;
 
 public class LibraryTest {
+	
+	private Library library;
+
+	@Before
+	public void setUp() {
+		library = new Library();
+	}
 
 	@Test
 	public void shouldRegisterMembers() {
-
-		// given
-		Library library = new Library();
 
 		// when
 		Member newMember1 = library.registerMember("Ted");
@@ -27,7 +32,6 @@ public class LibraryTest {
 	public void shouldNotRegisterAgainWhenAlreadyMember() {
 		
 		// given
-		Library library = new Library();
 		library.registerMember("Ted");
 		
 		// when we register with same name
