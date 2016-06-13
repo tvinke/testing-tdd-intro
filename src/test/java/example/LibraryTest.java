@@ -13,7 +13,9 @@ public class LibraryTest {
 		Library library = new Library();
 		
 		// when
-		library.registerMember("Ted");
+		Member newMember = library.registerMember("Ted");
+		
+		// then check for member's name to be same
 	}
 
 }
