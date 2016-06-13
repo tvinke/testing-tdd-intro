@@ -33,8 +33,9 @@ public class LibraryTest {
 		// when we register with same name
 		try {
 			library.registerMember("Ted");
+			fail("should not have registered Ted twice");
 		} catch (AlreadyMemberException e) {
-
+			// success!
 		}
 		
 	}
