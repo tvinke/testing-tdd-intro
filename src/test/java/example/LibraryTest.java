@@ -2,13 +2,18 @@ package example;
 
 import static org.hamcrest.CoreMatchers.equalTo;
 import static org.hamcrest.CoreMatchers.is;
-import static org.junit.Assert.*;
+import static org.junit.Assert.assertThat;
 
 import org.junit.Before;
+import org.junit.Rule;
 import org.junit.Test;
+import org.junit.rules.ExpectedException;
 
 public class LibraryTest {
-	
+
+	@Rule
+	public ExpectedException thrown = ExpectedException.none();
+
 	private Library library;
 
 	@Before
@@ -21,7 +26,7 @@ public class LibraryTest {
 
 		// when
 		Member newMember1 = library.registerMember("Ted");
-		Member newMember2 = library.registerMember("Bob");		
+		Member newMember2 = library.registerMember("Bob");
 
 		// then
 		assertThat(newMember1.getName(), is(equalTo("Ted")));
@@ -30,17 +35,13 @@ public class LibraryTest {
 
 	@Test
 	public void shouldNotRegisterAgainWhenAlreadyMember() {
-		
+
 		// given
 		library.registerMember("Ted");
-		
-		// when we register with same name
-		try {
-			library.registerMember("Ted");
-			fail("should not have registered Ted twice");
-		} catch (AlreadyMemberException e) {
-			// success!
-		}
-		
+
+		// fail when we register with same name
+		thrown.expect(AlreadyMemberException.class);
+		library.registerMember("Ted");
+
 	}
 }
