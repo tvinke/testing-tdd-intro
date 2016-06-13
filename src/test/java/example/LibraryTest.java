@@ -15,10 +15,12 @@ public class LibraryTest {
 		Library library = new Library();
 
 		// when
-		Member newMember = library.registerMember("Ted");
+		Member newMember1 = library.registerMember("Ted");
+		Member newMember2 = library.registerMember("Bob");		
 
 		// then
-		assertThat(newMember.getName(), is(equalTo("Ted")));
+		assertThat(newMember1.getName(), is(equalTo("Ted")));
+		assertThat(newMember2.getName(), is(equalTo("Bob")));
 	}
 
 }
