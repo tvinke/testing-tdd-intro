@@ -11,6 +11,9 @@ public class LibraryTest {
 		
 		// given
 		Library library = new Library();
+		
+		// when
+		library.registerMember("Ted");
 	}
 
 }
