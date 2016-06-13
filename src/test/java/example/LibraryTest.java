@@ -23,4 +23,8 @@ public class LibraryTest {
 		assertThat(newMember2.getName(), is(equalTo("Bob")));
 	}
 
+	@Test
+	public void shouldNotRegisterAgainWhenAlreadyMember() {
+		fail("not implemented");
+	}
 }
