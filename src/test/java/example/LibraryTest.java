@@ -7,7 +7,7 @@ import org.junit.Test;
 public class LibraryTest {
 
 	@Test
-	public void test() {
+	public void shouldRegisterMembers() {
 		fail("Not yet implemented");
 	}
 
