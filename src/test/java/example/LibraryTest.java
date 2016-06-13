@@ -8,7 +8,9 @@ public class LibraryTest {
 
 	@Test
 	public void shouldRegisterMembers() {
-		fail("Not yet implemented");
+		
+		// given
+		Library library = new Library();
 	}
 
 }
