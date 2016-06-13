@@ -7,9 +7,10 @@ public class Library {
 	 * 
 	 * @param name
 	 *            The name of the member
-	 * @return 
+	 * @return registered member
 	 */
 	public Member registerMember(String name) {
+		return new Member(name);
 	}
 
 }
