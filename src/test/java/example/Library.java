@@ -7,8 +7,9 @@ public class Library {
 	 * 
 	 * @param name
 	 *            The name of the member
+	 * @return 
 	 */
-	public void registerMember(String name) {
+	public Member registerMember(String name) {
 	}
 
 }
