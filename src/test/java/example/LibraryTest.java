@@ -31,8 +31,11 @@ public class LibraryTest {
 		library.registerMember("Ted");
 		
 		// when we register with same name
-		library.registerMember("Ted");
+		try {
+			library.registerMember("Ted");
+		} catch (AlreadyMemberException e) {
+
+		}
 		
-		// then we should see it fail somehow
 	}
 }
